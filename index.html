@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    *,
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #trailer {
+        position: fixed;
+
+        width: 100vw;
+        max-height: 100vh;
+        object-fit: cover; /
+    }
+    .intro{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 20px;
+        font-size: 20px;
+        font-family: fantasy;
+    }
+    #btn{
+        margin-top: 10px;
+        width: 150px;
+        border: none;
+        padding: 12px;
+        background-color: red;
+        color: white;
+        font-weight: 800;
+        cursor: pointer;
+        border-radius: 2em;
+    }
+    #btn:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: .3s ease-in-out;
+    }
+  </style>
+  <body>
+    <video autoplay loop muted id="trailer">
+      <source src="fortnite-trailer.mp4" type="video/mp4" />
+    </video>
+    <div class="intro">
+      <center>
+        <img src="logo.png" width="100" alt="" />
+        <p>
+          FORTNITE adalah game populer dengan grafik yang sangat edan sekali
+          epribadih. game initeh ngegabungin elemen survival, bangun-membangun struktur (building), sama pertarungan yang sangat intens sekalii.
+        </p>
+        <button id="btn" onclick="triggerBtn()">PAUSE</button>
+      </center>
+    </div>
+
+    <script>
+        const trailer = document.getElementById('trailer')
+        const btn = document.getElementById('btn')
+
+        function triggerBtn(){
+            if(trailer.paused){
+                trailer.play()
+                btn.innerHTML = 'PAUSE'
+            }else{
+                trailer.pause()
+                btn.innerHTML = 'PLAY'
+            }
+        }
+    </script>
+  </body>
+</html>
